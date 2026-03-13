@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ॐ গাড়িখানা ওল্ড মনসা মন্দির, পুরুলিয়া</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B00;
+    --gold: #FFD700;
+    --gold-soft: #FFF0B0;
+    --maroon: #8B1A1A;
+    --cream: #FFF8ED;
+    --cream-dark: #F5E6CC;
+    --text-dark: #2C1A0E;
+    --text-mid: #6B3A2A;
+    --text-light: #A0816A;
+    --white: #FFFFFF;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--cream); color:var(--text-dark); font-family:'Poppins',sans-serif; min-height:100vh; overflow-x:hidden; }
+
+  .top-border { height:6px; background: repeating-linear-gradient(90deg, var(--saffron) 0px, var(--saffron) 20px, var(--gold) 20px, var(--gold) 40px, var(--maroon) 40px, var(--maroon) 60px, var(--gold) 60px, var(--gold) 80px); }
+
+  /* Hero */
+  .hero { background: linear-gradient(160deg,#3D0C02 0%,#6B1A00 40%,#8B3A00 100%); padding:60px 20px 80px; text-align:center; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFD700' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
+  .om-symbol { font-size:4rem; color:var(--gold); display:block; margin-bottom:16px; text-shadow:0 0 30px rgba(255,215,0,0.6); animation:omGlow 3s ease-in-out infinite; position:relative; }
+  @keyframes omGlow { 0%,100%{text-shadow:0 0 20px rgba(255,215,0,0.5);} 50%{text-shadow:0 0 50px rgba(255,215,0,0.9),0 0 80px rgba(255,107,0,0.4);} }
+  .hero-title { font-family:'Hind Siliguri',sans-serif; font-size:clamp(1.8rem,5vw,3rem); color:var(--gold); margin-bottom:12px; line-height:1.3; position:relative; }
+  .hero-subtitle { font-size:1rem; color:rgba(255,240,176,0.85); max-width:520px; margin:0 auto 32px; line-height:1.7; font-weight:300; position:relative; }
+  .hero-divider { display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:32px; position:relative; }
+  .hero-divider-line { width:80px; height:1px; background:rgba(255,215,0,0.4); }
+  .hero-stats { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; position:relative; }
+  .stat-num { font-size:1.8rem; font-weight:700; color:var(--gold); font-family:'Hind Siliguri',sans-serif; }
+  .stat-label { font-size:0.75rem; color:rgba(255,240,176,0.7); margin-top:2px; }
+  .wave { display:block; width:100%; height:60px; background:var(--cream); clip-path:ellipse(55% 100% at 50% 100%); margin-top:-1px; }
+
+  /* Ticker */
+  .ticker { background:linear-gradient(90deg,var(--maroon),#6B1A00); color:var(--gold-soft); padding:10px 0; overflow:hidden; white-space:nowrap; }
+  .ticker-inner { display:inline-block; animation:ticker 28s linear infinite; font-family:'Hind Siliguri',sans-serif; font-size:0.9rem; }
+  @keyframes ticker { from{transform:translateX(100vw);} to{transform:translateX(-100%);} }
+
+  /* Main */
+  .main { max-width:780px; margin:0 auto; padding:40px 20px 80px; }
+  .section-title { text-align:center; margin-bottom:36px; }
+  .section-title h2 { font-family:'Hind Siliguri',sans-serif; font-size:1.7rem; color:var(--maroon); margin-bottom:8px; }
+  .title-ornament { display:flex; align-items:center; justify-content:center; gap:12px; }
+  .ornament-line { width:60px; height:2px; background:linear-gradient(90deg,transparent,var(--saffron)); }
+  .ornament-line.right { background:linear-gradient(90deg,var(--saffron),transparent); }
+
+  /* Categories */
+  .categories { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin-bottom:48px; }
+  .cat-btn { background:var(--white); border:2px solid var(--cream-dark); border-radius:16px; padding:18px 10px; cursor:pointer; text-align:center; transition:all 0.25s; }
+  .cat-btn:hover, .cat-btn.active { border-color:var(--saffron); background:linear-gradient(135deg,#FFF3E0,#FFE0B2); transform:translateY(-3px); box-shadow:0 8px 24px rgba(255,107,0,0.15); }
+  .cat-icon { font-size:1.8rem; margin-bottom:8px; display:block; }
+  .cat-label { font-size:0.85rem; color:var(--text-dark); font-weight:600; font-family:'Hind Siliguri',sans-serif; }
+
+  /* Form Card */
+  .form-card { background:var(--white); border-radius:24px; padding:36px; box-shadow:0 4px 40px rgba(139,26,26,0.08); border:1px solid var(--cream-dark); position:relative; overflow:hidden; }
+  .form-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--saffron),var(--gold),var(--maroon)); }
+  .form-card h3 { font-family:'Hind Siliguri',sans-serif; font-size:1.3rem; color:var(--maroon); margin-bottom:6px; }
+  .form-card p { font-size:0.85rem; color:var(--text-light); margin-bottom:28px; line-height:1.6; }
+  .form-group { margin-bottom:20px; }
+  .form-label { display:block; font-size:0.82rem; font-weight:600; color:var(--text-mid); margin-bottom:8px; font-family:'Hind Siliguri',sans-serif; }
+  .form-label span { color:var(--saffron); }
+  .form-input, .form-select, .form-textarea { width:100%; padding:13px 16px; border:2px solid var(--cream-dark); border-radius:12px; font-size:0.9rem; font-family:'Hind Siliguri',sans-serif; color:var(--text-dark); background:var(--cream); transition:border-color 0.2s,box-shadow 0.2s; outline:none; }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--saffron); box-shadow:0 0 0 4px rgba(255,107,0,0.1); background:var(--white); }
+  .form-textarea { min-height:130px; resize:vertical; line-height:1.7; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:500px){.form-row{grid-template-columns:1fr;}}
+  .char-count { text-align:right; font-size:0.72rem; color:var(--text-light); margin-top:4px; }
+
+  .urgency-options { display:flex; gap:10px; flex-wrap:wrap; }
+  .urgency-btn { padding:8px 18px; border-radius:999px; border:2px solid var(--cream-dark); background:var(--cream); cursor:pointer; font-size:0.8rem; font-weight:600; transition:all 0.2s; color:var(--text-mid); }
+  .urgency-btn:hover { border-color:var(--saffron); color:var(--saffron); }
+  .urgency-btn.selected { background:var(--saffron); border-color:var(--saffron); color:var(--white); }
+
+  .submit-btn { width:100%; padding:16px; background:linear-gradient(135deg,var(--saffron),#C94B00); border:none; border-radius:14px; color:var(--white); font-size:1.05rem; font-family:'Hind Siliguri',sans-serif; font-weight:700; cursor:pointer; margin-top:12px; transition:all 0.25s; box-shadow:0 4px 20px rgba(255,107,0,0.3); }
+  .submit-btn:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(255,107,0,0.45); }
+
+  /* Success */
+  .success-box { display:none; text-align:center; padding:48px 24px; }
+  .success-box.visible { display:block; }
+  .success-icon { font-size:4rem; margin-bottom:20px; animation:bounceIn 0.6s cubic-bezier(0.16,1,0.3,1); }
+  @keyframes bounceIn { from{transform:scale(0.5);opacity:0;} to{transform:scale(1);opacity:1;} }
+  .success-box h3 { font-family:'Hind Siliguri',sans-serif; font-size:1.5rem; color:var(--maroon); margin-bottom:10px; }
+  .success-box p { color:var(--text-light); line-height:1.7; margin-bottom:24px; }
+  .success-shloka { background:linear-gradient(135deg,#FFF8ED,#FFE0B2); border-left:4px solid var(--saffron); border-radius:12px; padding:16px 20px; font-family:'Hind Siliguri',sans-serif; font-style:italic; color:var(--text-mid); font-size:0.95rem; line-height:1.8; margin-bottom:24px; }
+  .btn-back { background:none; border:2px solid var(--saffron); color:var(--saffron); border-radius:999px; padding:10px 28px; cursor:pointer; font-family:'Hind Siliguri',sans-serif; font-size:0.9rem; font-weight:600; transition:all 0.2s; }
+  .btn-back:hover { background:var(--saffron); color:white; }
+
+  /* Info Cards */
+  .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:48px; }
+  .info-card { background:var(--white); border-radius:20px; padding:24px; border:1px solid var(--cream-dark); text-align:center; transition:transform 0.2s; }
+  .info-card:hover { transform:translateY(-4px); }
+  .info-card-icon { font-size:2.2rem; margin-bottom:12px; }
+  .info-card h4 { font-family:'Hind Siliguri',sans-serif; font-size:1rem; color:var(--maroon); margin-bottom:6px; }
+  .info-card p { font-size:0.8rem; color:var(--text-light); line-height:1.6; }
+
+  footer { background:linear-gradient(135deg,#3D0C02,#6B1A00); color:rgba(255,240,176,0.8); text-align:center; padding:32px 20px; font-size:0.82rem; line-height:1.8; }
+  footer .footer-om { font-size:1.5rem; color:var(--gold); display:block; margin-bottom:8px; }
+
+  /* ===== VOICE DARBAR SECTION ===== */
+  .voice-section { background: linear-gradient(135deg,#1a0500,#2d0800); padding:60px 20px; }
+  .voice-inner { max-width:680px; margin:0 auto; text-align:center; }
+  .voice-section-title h2 { font-family:'Hind Siliguri',sans-serif; font-size:1.8rem; color:var(--gold); margin-bottom:8px; }
+  .voice-section-title p { color:rgba(255,240,176,0.65); font-size:0.88rem; margin-bottom:40px; }
+
+  .diya-animation { font-size:3rem; display:block; margin:0 auto 24px; animation:flameDance 2s ease-in-out infinite; }
+  @keyframes flameDance { 0%,100%{transform:scale(1) rotate(-2deg);} 50%{transform:scale(1.1) rotate(2deg);} }
+
+  .voice-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,215,0,0.25); border-radius:28px; padding:36px 28px; position:relative; overflow:hidden; }
+  .voice-card::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 0%, rgba(255,215,0,0.06) 0%, transparent 70%); pointer-events:none; }
+
+  /* Mic button */
+  .mic-wrapper { position:relative; display:inline-flex; align-items:center; justify-content:center; margin:0 auto 24px; }
+  .ripple { position:absolute; border-radius:50%; border:2px solid rgba(255,215,0,0.4); opacity:0; }
+  .ripple:nth-child(1){width:120px;height:120px;}
+  .ripple:nth-child(2){width:160px;height:160px;}
+  .ripple:nth-child(3){width:200px;height:200px;}
+  .listening .ripple { animation:rippleOut 1.8s ease-out infinite; }
+  .listening .ripple:nth-child(2){animation-delay:0.5s;}
+  .listening .ripple:nth-child(3){animation-delay:1s;}
+  @keyframes rippleOut { 0%{opacity:0.6;transform:scale(0.85);} 100%{opacity:0;transform:scale(1.2);} }
+
+  .mic-btn { position:relative; z-index:2; width:88px; height:88px; border-radius:50%; border:none; cursor:pointer; background:linear-gradient(135deg,#FF6B00,#C94B00); display:flex; align-items:center; justify-content:center; font-size:2rem; transition:all 0.25s; box-shadow:0 0 30px rgba(255,107,0,0.4); }
+  .mic-btn:hover { transform:scale(1.07); box-shadow:0 0 50px rgba(255,107,0,0.6); }
+  .mic-btn.listening { background:linear-gradient(135deg,#ff4444,#aa0000); animation:micPulse 1s ease-in-out infinite; box-shadow:0 0 40px rgba(255,68,68,0.6); }
+  @keyframes micPulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
+
+  .mic-status { font-family:'Hind Siliguri',sans-serif; font-size:1rem; color:rgba(255,240,176,0.7); margin-bottom:16px; min-height:24px; transition:color 0.3s; }
+  .mic-status.active { color:var(--gold); }
+
+  /* Live transcript */
+  .live-box { background:rgba(255,255,255,0.05); border:1px solid rgba(255,215,0,0.15); border-radius:14px; padding:16px 18px; min-height:52px; font-family:'Hind Siliguri',sans-serif; font-size:0.92rem; color:rgba(255,240,176,0.9); line-height:1.7; text-align:left; display:none; margin-bottom:20px; position:relative; }
+  .live-box.visible { display:block; }
+  .live-box::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(to bottom,var(--saffron),var(--gold)); border-radius:3px 0 0 3px; }
+  .cursor-blink { display:inline-block; width:2px; height:1em; background:var(--gold); vertical-align:text-bottom; animation:blink 1s step-end infinite; margin-left:2px; }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+  /* AI Reply box */
+  .ai-reply-box { display:none; background:linear-gradient(135deg,rgba(255,215,0,0.08),rgba(255,107,0,0.05)); border:1px solid rgba(255,215,0,0.3); border-radius:18px; padding:22px 24px; text-align:left; margin-top:4px; animation:fadeIn 0.5s ease; }
+  .ai-reply-box.visible { display:block; }
+  .reply-header { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .reply-header .maa-icon { font-size:1.5rem; }
+  .reply-header span { font-family:'Hind Siliguri',sans-serif; font-size:0.85rem; color:var(--gold); font-weight:700; }
+  .reply-text { font-family:'Hind Siliguri',sans-serif; font-size:0.95rem; color:rgba(255,240,176,0.92); line-height:1.9; margin-bottom:16px; }
+  .reply-actions { display:flex; gap:10px; flex-wrap:wrap; }
+  .btn-speak { background:linear-gradient(135deg,var(--saffron),#C94B00); border:none; border-radius:999px; color:white; padding:9px 22px; cursor:pointer; font-size:0.82rem; font-weight:600; transition:all 0.2s; display:flex; align-items:center; gap:6px; }
+  .btn-speak:hover { transform:scale(1.04); box-shadow:0 4px 16px rgba(255,107,0,0.4); }
+  .btn-speak.speaking { background:linear-gradient(135deg,#666,#444); }
+  .btn-clear { background:transparent; border:1px solid rgba(255,215,0,0.3); border-radius:999px; color:rgba(255,240,176,0.6); padding:9px 18px; cursor:pointer; font-size:0.82rem; transition:all 0.2s; }
+  .btn-clear:hover { border-color:var(--gold); color:var(--gold); }
+
+  .loading-dots { display:none; text-align:center; padding:16px; }
+  .loading-dots.visible { display:block; }
+  .loading-dots span { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--gold); margin:0 3px; animation:dotBounce 1.2s ease-in-out infinite; }
+  .loading-dots span:nth-child(2){animation-delay:0.2s;}
+  .loading-dots span:nth-child(3){animation-delay:0.4s;}
+  @keyframes dotBounce { 0%,80%,100%{transform:scale(0.6);opacity:0.4;} 40%{transform:scale(1);opacity:1;} }
+
+</style>
+</head>
+<body>
+
+<div class="top-border"></div>
+
+<section class="hero">
+  <span class="om-symbol">ॐ</span>
+  <h1 class="hero-title">গাড়িখানা ওল্ড মনসা মন্দির, পুরুলিয়া</h1>
+  <p class="hero-subtitle">
+    जीवन में कोई भी कठिनाई हो — परिवार, स्वास्थ्य, रिश्ते, या मन की शांति —
+    माँ मनसा के चरणों में अपनी बात रखें। माँ हर दुख हरती हैं। 🙏
+  </p>
+  <div class="hero-divider">
+    <div class="hero-divider-line"></div>
+    <span style="color:var(--gold)">❁</span>
+    <div class="hero-divider-line"></div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">২৪/৭</div><div class="stat-label">সেবা সর্বদা</div></div>
+    <div class="stat"><div class="stat-num">১০০০+</div><div class="stat-label">মানুষের সাহায্য</div></div>
+    <div class="stat"><div class="stat-num">১০০%</div><div class="stat-label">গোপনীয়</div></div>
+  </div>
+</section>
+<div class="wave"></div>
+
+<div class="ticker">
+  <span class="ticker-inner">
+    &nbsp;&nbsp;&nbsp;🪔 "সর্বে ভবন্তু সুখিনঃ, সর্বে সন্তু নিরাময়াঃ" &nbsp;&nbsp;&nbsp;❀&nbsp;&nbsp;&nbsp;
+    প্রতিটি সমস্যার সমাধান আছে — শুধু একটি পদক্ষেপ নিন &nbsp;&nbsp;&nbsp;❀&nbsp;&nbsp;&nbsp;
+    ঈশ্বর প্রতিটি মুহূর্তে আপনার সাথে আছেন &nbsp;&nbsp;&nbsp;❀&nbsp;&nbsp;&nbsp;
+    🙏 আপনার সেবায় সর্বদা প্রস্তুত &nbsp;&nbsp;&nbsp;❀&nbsp;&nbsp;&nbsp;
+    🌸 ধর্মই সবচেয়ে বড় আশ্রয় &nbsp;&nbsp;&nbsp;
+  </span>
+</div>
+
+<div class="main">
+  <div class="section-title">
+    <h2>মাঁর দরবারে আর্জি জানান</h2>
+    <div class="title-ornament">
+      <div class="ornament-line"></div>
+      <span style="color:var(--saffron)">✦</span>
+      <div class="ornament-line right"></div>
+    </div>
+  </div>
+
+  <div class="categories">
+    <div class="cat-btn active" onclick="selectCat(this,'পারিবারিক সমস্যা')"><span class="cat-icon">🏠</span><div class="cat-label">পরিবার</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'স্বাস্থ্য সমস্যা')"><span class="cat-icon">🌿</span><div class="cat-label">স্বাস্থ্য</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'মানসিক শান্তি')"><span class="cat-icon">🧘</span><div class="cat-label">মনের শান্তি</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'সম্পর্কের সমস্যা')"><span class="cat-icon">💛</span><div class="cat-label">সম্পর্ক</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'আর্থিক সমস্যা')"><span class="cat-icon">🪙</span><div class="cat-label">আর্থিক</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'ধর্মীয় পথনির্দেশ')"><span class="cat-icon">🪔</span><div class="cat-label">ধর্মীয়</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'অন্য সমস্যা')"><span class="cat-icon">🙏</span><div class="cat-label">অন্যান্য</div></div>
+  </div>
+
+  <div class="form-card" id="formCard">
+    <div id="formContent">
+      <h3>আপনার কথা আমাদের জানান 🙏</h3>
+      <p>আপনার সমস্ত তথ্য সম্পূর্ণ গোপনীয় থাকবে। নিঃসংকোচে লিখুন।</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">আপনার নাম <span>*</span></label>
+          <input type="text" class="form-input" id="nameInput" placeholder="যেমন: রামেশ্বর দা" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">বয়স</label>
+          <input type="number" class="form-input" id="ageInput" placeholder="যেমন: ৩৫" min="1" max="120" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">যোগাযোগ (ঐচ্ছিক)</label>
+        <input type="text" class="form-input" id="contactInput" placeholder="ফোন নম্বর বা ইমেইল" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">সমস্যার ধরন <span>*</span></label>
+        <select class="form-select" id="categorySelect">
+          <option value="">— বেছে নিন —</option>
+          <option>পারিবারিক সমস্যা</option>
+          <option>স্বাস্থ্য সমস্যা</option>
+          <option>মানসিক শান্তি</option>
+          <option>সম্পর্কের সমস্যা</option>
+          <option>আর্থিক সমস্যা</option>
+          <option>ধর্মীয় পথনির্দেশ</option>
+          <option>অন্য সমস্যা</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">আপনার সমস্যা বিস্তারিত লিখুন <span>*</span></label>
+        <textarea class="form-textarea" id="problemText" placeholder="এখানে আপনার কথা লিখুন... মনে যা আছে সব বলুন। আমরা মনোযোগ দিয়ে পড়ব।" oninput="updateCount(this)" onkeyup="updateCount(this)"></textarea>
+        <div class="char-count"><span id="charCount">0</span> / ১০০০ অক্ষর</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">সাহায্য কতটা জরুরি?</label>
+        <div class="urgency-options">
+          <button class="urgency-btn selected" onclick="selectUrgency(this)">সাধারণ</button>
+          <button class="urgency-btn" onclick="selectUrgency(this)">দ্রুত দরকার</button>
+          <button class="urgency-btn" onclick="selectUrgency(this)">অত্যন্ত জরুরি</button>
+        </div>
+      </div>
+
+      <button class="submit-btn" onclick="submitForm()">🙏 &nbsp; সমস্যা পাঠান — সাহায্য চান</button>
+    </div>
+
+    <div class="success-box" id="successBox">
+      <div class="success-icon">🪔</div>
+      <h3>আপনার কথা আমাদের কাছে পৌঁছে গেছে!</h3>
+      <p>ধন্যবাদ। আমরা আপনার সমস্যা পেয়েছি।<br>আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব। ঈশ্বর আপনাকে রক্ষা করুন।</p>
+      <div class="success-shloka">
+        "दुःखेष्वनुद्विग्नमनाः सुखेषु विगतस्पृहः।<br>
+        वीतरागभयक्रोधः स्थितधीर्मुनिरुच्यते॥"<br>
+        <small style="font-size:0.8rem;color:var(--text-light);">— শ্রীমদ্ভগবদ্গীতা, ২.৫৬</small>
+      </div>
+      <button class="btn-back" onclick="resetForm()">← অন্য সমস্যা পাঠান</button>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card"><div class="info-card-icon">🔒</div><h4>সম্পূর্ণ গোপনীয়তা</h4><p>আপনার কথা শুধুমাত্র আমাদের বিশ্বস্ত পথপ্রদর্শকরাই দেখেন।</p></div>
+    <div class="info-card"><div class="info-card-icon">🪔</div><h4>ধর্মীয় পথনির্দেশ</h4><p>বেদ, গীতা ও শাস্ত্রের ভিত্তিতে পরামর্শ দেওয়া হয়।</p></div>
+    <div class="info-card"><div class="info-card-icon">💛</div><h4>সম্পূর্ণ বিনামূল্যে</h4><p>এই সেবা সম্পূর্ণ বিনামূল্যে — সেবাই আমাদের ধর্ম।</p></div>
+  </div>
+</div>
+
+
+
+<!-- ===== VOICE DARBAR SECTION ===== -->
+<section class="voice-section">
+  <div class="voice-inner">
+    <div class="voice-section-title">
+      <h2>🎙️ মাঁর দরবারে বলুন</h2>
+      <p>আপনার সমস্যা কণ্ঠে বলুন — মাঁ মনসার কৃপায় AI পথনির্দেশ পান</p>
+    </div>
+
+    <span class="diya-animation">🪔</span>
+
+    <div class="voice-card">
+      <div class="mic-wrapper" id="micWrapper">
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+        <button class="mic-btn" id="micBtn" onclick="toggleVoice()">🎙️</button>
+      </div>
+
+      <div class="mic-status" id="micStatus">মাঁর দরবারে কথা বলতে মাইক্রোফোন চাপুন</div>
+
+      <div class="live-box" id="liveBox">
+        <span id="liveVoiceText"></span><span class="cursor-blink"></span>
+      </div>
+
+      <div class="loading-dots" id="loadingDots">
+        <span></span><span></span><span></span>
+        <div style="margin-top:10px;font-family:'Hind Siliguri',sans-serif;font-size:0.85rem;color:rgba(255,240,176,0.6);">মাঁর আশীর্বাদ আসছে...</div>
+      </div>
+
+      <div class="ai-reply-box" id="aiReplyBox">
+        <div class="reply-header">
+          <span class="maa-icon">🙏</span>
+          <span>মাঁ মনসার দিব্য বার্তা</span>
+        </div>
+        <div class="reply-text" id="replyText"></div>
+        <div class="reply-actions">
+          <button class="btn-speak" id="speakBtn" onclick="speakReply()">🔊 &nbsp;শুনুন (কণ্ঠে)</button>
+          <button class="btn-clear" onclick="clearVoice()">✕ &nbsp;নতুন কথা বলুন</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Maa Mansa Story Section -->
+<section class="story-section">
+  <div class="story-inner">
+    <div class="story-title">
+      <h2>🪔 মাঁ মনসার কথা ও মহিমা</h2>
+      <p>জানুন মাঁ মনসা দেবী সম্পর্কে — তাঁর উৎপত্তি, শক্তি ও আশীর্বাদ</p>
+    </div>
+
+    <div class="story-tabs">
+      <button class="story-tab active" onclick="showPanel('parichay', this)">परिचय</button>
+      <button class="story-tab" onclick="showPanel('katha', this)">जन्म कथा</button>
+      <button class="story-tab" onclick="showPanel('shakti', this)">शक्तियाँ</button>
+      <button class="story-tab" onclick="showPanel('puja', this)">पूजा विधि</button>
+    </div>
+
+    <div id="parichay" class="story-panel active">
+      <div class="story-card">
+        <h3>🌸 মাঁ মনসা দেবী — কে তিনি?</h3>
+        <p>মাঁ মনসা দেবী হিন্দু ধর্মে সর্পদের দেবী হিসেবে পূজিত হন। "মনসা" অর্থ — মন থেকে জাত বা মনের দেবী। তিনি ভগবান শিবের মানসকন্যা এবং মহর্ষি কশ্যপের কন্যা। তাঁকে "বিষহরী মাঁ"ও বলা হয় কারণ তিনি সর্পদংশ ও বিষ থেকে রক্ষা করেন।</p>
+        <div class="story-highlight">"যে ভক্ত সত্যিকারের মন থেকে মাঁ মনসাকে স্মরণ করেন, মাঁ তার প্রতিটি কষ্ট দূর করেন।"</div>
+        <p>মাঁ মনসাকে বাংলা, ঝাড়খণ্ড, বিহার, উত্তরপ্রদেশ ও আসামে বিশেষভাবে পূজা করা হয়। নাগ পঞ্চমীর দিন তাঁর পূজার বিশেষ মহত্ব আছে। তাঁর বাহন সর্প এবং হাতে পদ্ম ও অভয় মুদ্রা।</p>
+        <p>মাঁ শুধু সর্পদংশ থেকে রক্ষা করেন না, বরং জীবনের প্রতিটি দুঃখ, ভয় ও সংকট থেকেও মুক্তি দেন। ভক্তদের মনোবাঞ্ছা পূরণ করাই মাঁর স্বভাব।</p>
+      </div>
+    </div>
+
+    <div id="katha" class="story-panel">
+      <div class="story-card">
+        <h3>📖 মাঁ মনসার জন্ম কথা</h3>
+        <p>পৌরাণিক কথা অনুসারে, একবার ভগবান শিব ধ্যানে বসেছিলেন। সেই সময় তাঁর মন থেকে একটি দিব্য শক্তির জন্ম হয় — এই শক্তিই মাঁ মনসা দেবী। "মন থেকে জন্মেছেন" বলে তাঁর নাম হয় "মনসা"।</p>
+        <p>আরেকটি কথায় বলা হয়, মহর্ষি কশ্যপের স্ত্রী কদ্রুর অভিশাপে সংসারে সর্পের আতঙ্ক বেড়ে গিয়েছিল। তখন ভগবান শিব একটি দিব্য কন্যাকে সর্পদের অধিষ্ঠাত্রী দেবী রূপে পাঠান — তিনিই মাঁ মনসা।</p>
+        <div class="story-highlight">"চাঁদ সদাগরের কথা" — মাঁ মনসার সবচেয়ে বিখ্যাত কাহিনিতে ব্যবসায়ী চাঁদ মাঁর পূজা করতে অস্বীকার করেছিলেন, কিন্তু মাঁ শেষ পর্যন্ত তাঁর পুত্র লখিন্দরকে জীবনদান দিয়ে নিজের মহিমা প্রমাণ করেন।</div>
+        <p>মাঁর ভক্ত বেহুলা তাঁর স্বামী লখিন্দরকে মৃত্যুর পর ফিরিয়ে আনতে মাঁ মনসার কঠোর সাধনা করেছিলেন। মাঁ তাঁর ভক্তিতে প্রসন্ন হয়ে লখিন্দরকে জীবনদান দেন। এই কাহিনি শেখায় — মাঁর শরণে যে আসে সে কখনো নিরাশ হয়ে ফেরে না।</p>
+      </div>
+    </div>
+
+    <div id="shakti" class="story-panel">
+      <div class="story-card">
+        <h3>⚡ মাঁর অষ্ট শক্তি</h3>
+        <p>মাঁ মনসা অষ্ট রূপে তাঁর ভক্তদের রক্ষা করেন। "অষ্ট মন্দির" নামটি এই আট শক্তির নামে:</p>
+        <div class="shakti-grid">
+          <div class="shakti-card"><span class="s-icon">🐍</span><h4>বিষহরী</h4><p>সর্পদংশ ও বিষ থেকে রক্ষা</p></div>
+          <div class="shakti-card"><span class="s-icon">💊</span><h4>রোগনাশিনী</h4><p>কঠিন রোগ নাশ</p></div>
+          <div class="shakti-card"><span class="s-icon">🏠</span><h4>গৃহরক্ষিণী</h4><p>ঘর-পরিবারের রক্ষা</p></div>
+          <div class="shakti-card"><span class="s-icon">🌟</span><h4>মনোকামনা পূর্ণী</h4><p>মনের ইচ্ছা পূরণ</p></div>
+          <div class="shakti-card"><span class="s-icon">😨</span><h4>ভয়নাশিনী</h4><p>সব ধরনের ভয় থেকে মুক্তি</p></div>
+          <div class="shakti-card"><span class="s-icon">💛</span><h4>সন্তান দায়িনী</h4><p>সন্তান সুখের আশীর্বাদ</p></div>
+          <div class="shakti-card"><span class="s-icon">🪙</span><h4>ধনদায়িনী</h4><p>আর্থিক সমৃদ্ধি প্রদান</p></div>
+          <div class="shakti-card"><span class="s-icon">☮️</span><h4>শান্তিদায়িনী</h4><p>মনে শান্তি ও স্থিরতা</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="puja" class="story-panel">
+      <div class="story-card">
+        <h3>🪔 মাঁ মনসার পূজা পদ্ধতি</h3>
+        <p>মাঁ মনসার পূজা সরল ও পবিত্র ভাবে করা হয়। বিশেষভাবে নাগ পঞ্চমী, শ্রাবণ মাস ও প্রতিটি মঙ্গলবার মাঁর পূজার বিশেষ ফল পাওয়া যায়।</p>
+        <div class="story-highlight">পূজার সর্বোত্তম সময় — ভোরবেলা ব্রহ্ম মুহূর্তে অথবা সন্ধ্যায়।</div>
+        <p><strong style="color:var(--gold-soft);">প্রয়োজনীয় সামগ্রী:</strong></p>
+        <p>হলুদ ফুল, দুধ, বেলপাতা, ধূপ-দীপ, নারকেল, সিঁদুর, মিষ্টি (পায়েস বা মিষ্টি পান), এবং মাঁর মূর্তি বা ছবি।</p>
+        <p><strong style="color:var(--gold-soft);">পূজা পদ্ধতি:</strong><br>
+        স্নান করে পরিষ্কার বস্ত্র পরুন → মাঁর মূর্তির সামনে প্রদীপ জ্বালান → পঞ্চামৃত দিয়ে অভিষেক করুন → হলুদ ফুল অর্পণ করুন → মাঁর ধ্যান করুন এবং মনের কথা বলুন → শেষে আরতি করুন।</p>
+        <p><strong style="color:var(--gold-soft);">মাঁর মন্ত্র:</strong></p>
+        <div class="story-highlight">"ওঁ হ্রীং শ্রীং ক্লীং ঐং মনসায়ৈ নমঃ"<br><small style="font-size:0.8rem;opacity:0.7;">— এই মন্ত্র ১০৮ বার জপ করুন</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Jagrukta / Awareness Section -->
+<section class="awareness-section">
+  <div class="awareness-inner">
+    <div class="section-title">
+      <h2>🌿 ধর্মীয় সচেতনতা</h2>
+      <div class="title-ornament">
+        <div class="ornament-line"></div>
+        <span style="color:var(--saffron)">✦</span>
+        <div class="ornament-line right"></div>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--text-light);font-size:0.9rem;margin-bottom:8px;margin-top:-20px;">जानिए कुछ महत्वपूर्ण बातें जो हर हिंदू भक्त को पता होनी चाहिए</p>
+
+    <div class="awareness-grid">
+      <div class="awareness-card">
+        <span class="aw-icon">🐍</span>
+        <h4>সর্পদংশ — মাঁর ইঙ্গিত নয়</h4>
+        <p>অনেকে সর্পদংশ হলে ঝাড়ফুঁকে সময় নষ্ট করেন। এটি প্রাণঘাতী হতে পারে।</p>
+        <ul class="aw-list">
+          <li>সর্পদংশ হলে সঙ্গে সঙ্গে হাসপাতালে যান</li>
+          <li>ক্ষত বাঁধুন, চুষবেন না</li>
+          <li>রোগীকে নাড়াবেন না, শান্ত রাখুন</li>
+          <li>মাঁকে প্রার্থনা করুন, চিকিৎসাও করুন</li>
+        </ul>
+      </div>
+
+      <div class="awareness-card">
+        <span class="aw-icon">🧠</span>
+        <h4>মানসিক স্বাস্থ্য — ভক্তি + চিকিৎসা</h4>
+        <p>বিষণ্নতা, উদ্বেগ বা মানসিক সমস্যা দুর্বলতা নয় — এগুলো রোগ। এর চিকিৎসা হয়।</p>
+        <ul class="aw-list">
+          <li>নিয়মিত পূজা ও ধ্যানে মন শান্ত হয়</li>
+          <li>গুরুতর সমস্যায় ডাক্তারের কাছে যান</li>
+          <li>বিশ্বস্ত কাউকে কথা বলুন</li>
+          <li>একা থাকবেন না — সাহায্য নিন</li>
+        </ul>
+      </div>
+
+      <div class="awareness-card">
+        <span class="aw-icon">👨‍👩‍👧</span>
+        <h4>পরিবারে ধর্মের গুরুত্ব</h4>
+        <p>ধর্ম পরিবারকে একত্রিত করে। সন্তানদের সংস্কার দেওয়া মাতা-পিতার ধর্ম।</p>
+        <ul class="aw-list">
+          <li>প্রতিদিন একসাথে প্রার্থনা করুন</li>
+          <li>উৎসব একসাথে উদযাপন করুন</li>
+          <li>বয়স্কদের সম্মান করুন — এটাই সেবা</li>
+          <li>শিশুদের ধর্মীয় গল্প শোনান</li>
+        </ul>
+      </div>
+
+      <div class="awareness-card">
+        <span class="aw-icon">⚠️</span>
+        <h4>কুসংস্কার থেকে বাঁচুন</h4>
+        <p>সত্যিকারের ধর্ম কখনো ভয় দেখায় না। কেউ "তন্ত্র-মন্ত্রের" নামে টাকা চাইলে সতর্ক থাকুন।</p>
+        <ul class="aw-list">
+          <li>টাকা নিয়ে "অভিশাপ দূর করা" ঠগরা</li>
+          <li>মাঁর পূজা সরল এবং বিনামূল্যে</li>
+          <li>কারো ভয়ে পড়বেন না</li>
+          <li>সন্দেহ হলে আমাদের জিজ্ঞেস করুন — পথনির্দেশ মিলবে</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-om">ॐ</span>
+  <strong>গাড়িখানা ওল্ড মনসা মন্দির, পুরুলিয়া</strong> — মাঁর কৃপা সর্বদা বজায় থাকুক<br>
+  সর্বে ভবন্তু সুখিনঃ 🙏
+</footer>
+
+<script>
+  function showPanel(id, el) {
+    document.querySelectorAll('.story-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.story-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    el.classList.add('active');
+  }
+  function selectCat(el, cat) {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    const sel = document.getElementById('categorySelect');
+    for (let o of sel.options) { if (o.value === cat) { sel.value = cat; break; } }
+  }
+  function selectUrgency(el) {
+    document.querySelectorAll('.urgency-btn').forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+  function updateCount(el) {
+    if (el.value.length > 1000) el.value = el.value.slice(0,1000);
+    document.getElementById('charCount').textContent = el.value.length;
+  }
+  function submitForm() {
+    const name = document.getElementById('nameInput').value.trim();
+    const problem = document.getElementById('problemText').value.trim();
+    const cat = document.getElementById('categorySelect').value;
+    if (!name) { alert('অনুগ্রহ করে আপনার নাম লিখুন।'); return; }
+    if (!cat) { alert('অনুগ্রহ করে সমস্যার ধরন বেছে নিন।'); return; }
+    if (problem.length < 3) { alert('অনুগ্রহ করে আপনার সমস্যা একটু বিস্তারিত লিখুন।'); return; }
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('successBox').classList.add('visible');
+    document.getElementById('formCard').scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+  function resetForm() {
+    document.getElementById('formContent').style.display = 'block';
+    document.getElementById('successBox').classList.remove('visible');
+    ['nameInput','ageInput','contactInput','problemText'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('charCount').textContent = '0';
+    document.getElementById('categorySelect').value = '';
+    document.querySelectorAll('.urgency-btn').forEach((b,i) => b.classList.toggle('selected', i===0));
+  }
+
+  // ===== VOICE DARBAR =====
+  var vListening = false;
+  var vTranscript = '';
+  var vRecog = null;
+  var speaking = false;
+
+  function toggleVoice() {
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) {
+      alert('অনুগ্রহ করে Chrome বা Edge browser ব্যবহার করুন।');
+      return;
+    }
+    if (vListening) {
+      stopVoice();
+    } else {
+      startVoice(SR);
+    }
+  }
+
+  function startVoice(SR) {
+    vTranscript = '';
+    vListening = true;
+
+    vRecog = new SR();
+    vRecog.continuous = true;
+    vRecog.interimResults = true;
+    vRecog.lang = 'bn-IN';
+
+    vRecog.onresult = function(e) {
+      var interim = '', final = '';
+      for (var i = e.resultIndex; i < e.results.length; i++) {
+        if (e.results[i].isFinal) final += e.results[i][0].transcript;
+        else interim += e.results[i][0].transcript;
+      }
+      vTranscript += final;
+      document.getElementById('liveVoiceText').textContent = vTranscript + interim;
+    };
+
+    vRecog.onerror = function(e) {
+      console.log('Speech error:', e.error);
+      if (e.error === 'not-allowed') {
+        alert('মাইক্রোফোন permission দিন। Browser settings থেকে allow করুন।');
+        vListening = false;
+        resetMicUI();
+      }
+    };
+
+    vRecog.onend = function() {
+      if (vListening) {
+        try { vRecog.start(); } catch(ex) {}
+      }
+    };
+
+    try {
+      vRecog.start();
+      document.getElementById('micBtn').classList.add('listening');
+      document.getElementById('micBtn').textContent = '⏹️';
+      document.getElementById('micWrapper').classList.add('listening');
+      document.getElementById('micStatus').textContent = 'শুনছি... বলুন। থামাতে আবার চাপুন।';
+      document.getElementById('micStatus').classList.add('active');
+      document.getElementById('liveBox').classList.add('visible');
+      document.getElementById('liveVoiceText').textContent = '';
+      document.getElementById('aiReplyBox').classList.remove('visible');
+    } catch(ex) {
+      alert('মাইক্রোফোন চালু করা যায়নি: ' + ex.message);
+      vListening = false;
+    }
+  }
+
+  function stopVoice() {
+    vListening = false;
+    if (vRecog) { try { vRecog.stop(); } catch(ex) {} }
+    resetMicUI();
+    var text = vTranscript.trim();
+    if (text && text.length > 2) {
+      document.getElementById('micStatus').textContent = 'আপনার কথা শোনা হয়েছে — মাঁর আশীর্বাদ আসছে...';
+      getAIReply(text);
+    } else {
+      document.getElementById('micStatus').textContent = 'কোনো কণ্ঠ পাওয়া যায়নি। আবার চেষ্টা করুন।';
+      document.getElementById('micStatus').classList.remove('active');
+      document.getElementById('liveBox').classList.remove('visible');
+    }
+  }
+
+  function resetMicUI() {
+    document.getElementById('micBtn').classList.remove('listening');
+    document.getElementById('micBtn').textContent = '🎙️';
+    document.getElementById('micWrapper').classList.remove('listening');
+  }
+
+  async function getAIReply(userText) {
+    document.getElementById('loadingDots').classList.add('visible');
+    document.getElementById('liveBox').classList.remove('visible');
+    try {
+      var res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: 'আপনি গাড়িখানা ওল্ড মনসা মন্দির, পুরুলিয়ার দিব্য পথপ্রদর্শক। ভক্তের সমস্যা শুনে মাঁ মনসা দেবীর কৃপা ও হিন্দু শাস্ত্রের ভিত্তিতে সহজ সরল বাংলায় পথ দেখান। মাঁ মনসার উল্লেখ করুন, একটি মন্ত্র দিন, ব্যবহারিক পরামর্শ দিন। শেষে আশীর্বাদ বাক্য দিন। কখনো নেতিবাচক কথা বলবেন না।',
+          messages: [{ role: 'user', content: 'ভক্তের সমস্যা: "' + userText + '"' }]
+        })
+      });
+      var data = await res.json();
+      var reply = (data.content && data.content[0] && data.content[0].text) ? data.content[0].text : 'মাঁ মনসার কৃপা আপনার উপর সদা বর্ষিত হোক। 🙏';
+      showReply(reply);
+    } catch(err) {
+      showReply('মাঁ মনসার কৃপা আপনার উপর সদা বর্ষিত হোক। ধৈর্য রাখুন, সত্যিকারের মন থেকে মাঁকে স্মরণ করুন।\n\nমন্ত্র: "ওঁ হ্রীং শ্রীং ক্লীং ঐং মনসায়ৈ নমঃ" 🙏');
+    }
+    document.getElementById('loadingDots').classList.remove('visible');
+  }
+
+  function showReply(text) {
+    document.getElementById('replyText').innerHTML = text.replace(/\n/g, '<br>');
+    document.getElementById('aiReplyBox').classList.add('visible');
+    document.getElementById('micStatus').textContent = 'মাঁর বার্তা এসে গেছে 🙏';
+    document.getElementById('aiReplyBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function speakReply() {
+    if (!window.speechSynthesis) { alert('আপনার browser text-to-speech সমর্থন করে না।'); return; }
+    if (speaking) {
+      speechSynthesis.cancel();
+      speaking = false;
+      document.getElementById('speakBtn').innerHTML = '🔊 &nbsp;শুনুন (কণ্ঠে)';
+      document.getElementById('speakBtn').classList.remove('speaking');
+      return;
+    }
+    var text = document.getElementById('replyText').innerText;
+    var utt = new SpeechSynthesisUtterance(text);
+    utt.lang = 'bn-IN'; utt.rate = 0.85; utt.pitch = 1.05;
+    utt.onstart = function() { speaking = true; document.getElementById('speakBtn').innerHTML = '⏹️ &nbsp;থামুন'; document.getElementById('speakBtn').classList.add('speaking'); };
+    utt.onend = function() { speaking = false; document.getElementById('speakBtn').innerHTML = '🔊 &nbsp;শুনুন (কণ্ঠে)'; document.getElementById('speakBtn').classList.remove('speaking'); };
+    speechSynthesis.speak(utt);
+  }
+
+  function clearVoice() {
+    if (window.speechSynthesis) speechSynthesis.cancel();
+    speaking = false;
+    vTranscript = '';
+    document.getElementById('aiReplyBox').classList.remove('visible');
+    document.getElementById('liveBox').classList.remove('visible');
+    document.getElementById('liveVoiceText').textContent = '';
+    document.getElementById('micStatus').textContent = 'মাঁর দরবারে কথা বলতে মাইক্রোফোন চাপুন';
+    document.getElementById('micStatus').classList.remove('active');
+    document.getElementById('speakBtn').innerHTML = '🔊 &nbsp;শুনুন (কণ্ঠে)';
+    document.getElementById('speakBtn').classList.remove('speaking');
+  }
+
+</script>
+</body>
+      </html>
