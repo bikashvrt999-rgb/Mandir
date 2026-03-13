@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ॐ গাড়িখানা ওল্ড মনসা মন্দির, পুরুলিয়া</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --saffron:#FF6B00; --gold:#FFD700; --gold-soft:#FFF0B0;
+  --maroon:#8B1A1A; --cream:#FFF8ED; --cream-dark:#F5E6CC;
+  --text-dark:#2C1A0E; --text-mid:#6B3A2A; --text-light:#A0816A; --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--cream);color:var(--text-dark);font-family:'Poppins',sans-serif;min-height:100vh;overflow-x:hidden;}
+.top-border{height:6px;background:repeating-linear-gradient(90deg,var(--saffron) 0px,var(--saffron) 20px,var(--gold) 20px,var(--gold) 40px,var(--maroon) 40px,var(--maroon) 60px,var(--gold) 60px,var(--gold) 80px);}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#3D0C02 0%,#6B1A00 40%,#8B3A00 100%);padding:50px 20px 70px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFD700' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
+.om-symbol{font-size:3.5rem;color:var(--gold);display:block;margin-bottom:12px;animation:omGlow 3s ease-in-out infinite;position:relative;}
+@keyframes omGlow{0%,100%{text-shadow:0 0 20px rgba(255,215,0,0.5);}50%{text-shadow:0 0 50px rgba(255,215,0,0.9),0 0 80px rgba(255,107,0,0.4);}}
+.hero-title{font-family:'Hind Siliguri',sans-serif;font-size:clamp(1.6rem,5vw,2.8rem);color:var(--gold);margin-bottom:10px;line-height:1.3;position:relative;}
+.hero-subtitle{font-size:0.9rem;color:rgba(255,240,176,0.85);max-width:520px;margin:0 auto 28px;line-height:1.7;font-weight:300;position:relative;}
+.wave{display:block;width:100%;height:50px;background:var(--cream);clip-path:ellipse(55% 100% at 50% 100%);margin-top:-1px;}
+
+/* TICKER */
+.ticker{background:linear-gradient(90deg,var(--maroon),#6B1A00);color:var(--gold-soft);padding:10px 0;overflow:hidden;white-space:nowrap;}
+.ticker-inner{display:inline-block;animation:ticker 28s linear infinite;font-family:'Hind Siliguri',sans-serif;font-size:0.9rem;}
+@keyframes ticker{from{transform:translateX(100vw);}to{transform:translateX(-100%);}}
+
+/* NOTICE BOARD */
+.notice-section{max-width:780px;margin:40px auto 0;padding:0 20px;}
+.notice-board{background:var(--white);border-radius:24px;padding:28px;box-shadow:0 4px 40px rgba(139,26,26,0.08);border:1px solid var(--cream-dark);margin-bottom:32px;}
+.notice-board h2{font-family:'Hind Siliguri',sans-serif;font-size:1.4rem;color:var(--maroon);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+#postsList{display:flex;flex-direction:column;gap:16px;}
+.post-item{background:var(--cream);border-radius:16px;padding:18px;border-left:4px solid var(--saffron);position:relative;}
+.post-item.mantra{border-left-color:#7B1FA2;}
+.post-item.pujo{border-left-color:#E65100;}
+.post-item.khabar{border-left-color:#1565C0;}
+.post-badge{display:inline-block;padding:3px 12px;border-radius:999px;font-size:0.72rem;font-weight:700;margin-bottom:8px;font-family:'Hind Siliguri',sans-serif;}
+.badge-mantra{background:#F3E5F5;color:#7B1FA2;}
+.badge-pujo{background:#FFF3E0;color:#E65100;}
+.badge-khabar{background:#E3F2FD;color:#1565C0;}
+.post-title{font-family:'Hind Siliguri',sans-serif;font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;}
+.post-body{font-family:'Hind Siliguri',sans-serif;font-size:0.88rem;color:var(--text-mid);line-height:1.7;}
+.post-date{font-size:0.72rem;color:var(--text-light);margin-top:8px;}
+.post-img{width:100%;border-radius:12px;margin-top:10px;max-height:220px;object-fit:cover;}
+.no-posts{text-align:center;color:var(--text-light);font-family:'Hind Siliguri',sans-serif;padding:32px;font-size:0.9rem;}
+
+/* MAIN FORM */
+.main{max-width:780px;margin:0 auto;padding:0 20px 80px;}
+.section-title{text-align:center;margin-bottom:28px;}
+.section-title h2{font-family:'Hind Siliguri',sans-serif;font-size:1.6rem;color:var(--maroon);margin-bottom:8px;}
+.title-ornament{display:flex;align-items:center;justify-content:center;gap:12px;}
+.ornament-line{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--saffron));}
+.ornament-line.right{background:linear-gradient(90deg,var(--saffron),transparent);}
+.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:36px;}
+.cat-btn{background:var(--white);border:2px solid var(--cream-dark);border-radius:16px;padding:16px 10px;cursor:pointer;text-align:center;transition:all 0.25s;}
+.cat-btn:hover,.cat-btn.active{border-color:var(--saffron);background:linear-gradient(135deg,#FFF3E0,#FFE0B2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(255,107,0,0.15);}
+.cat-icon{font-size:1.6rem;margin-bottom:6px;display:block;}
+.cat-label{font-size:0.82rem;color:var(--text-dark);font-weight:600;font-family:'Hind Siliguri',sans-serif;}
+.form-card{background:var(--white);border-radius:24px;padding:28px;box-shadow:0 4px 40px rgba(139,26,26,0.08);border:1px solid var(--cream-dark);position:relative;overflow:hidden;margin-bottom:32px;}
+.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--saffron),var(--gold),var(--maroon));}
+.form-card h3{font-family:'Hind Siliguri',sans-serif;font-size:1.2rem;color:var(--maroon);margin-bottom:6px;}
+.form-card p{font-size:0.82rem;color:var(--text-light);margin-bottom:24px;line-height:1.6;}
+.form-group{margin-bottom:18px;}
+.form-label{display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:7px;font-family:'Hind Siliguri',sans-serif;}
+.form-label span{color:var(--saffron);}
+.form-input,.form-select,.form-textarea{width:100%;padding:12px 14px;border:2px solid var(--cream-dark);border-radius:12px;font-size:0.9rem;font-family:'Hind Siliguri',sans-serif;color:var(--text-dark);background:var(--cream);transition:border-color 0.2s;outline:none;}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--saffron);box-shadow:0 0 0 4px rgba(255,107,0,0.1);background:var(--white);}
+.form-textarea{min-height:120px;resize:vertical;line-height:1.7;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:500px){.form-row{grid-template-columns:1fr;}}
+.urgency-options{display:flex;gap:10px;flex-wrap:wrap;}
+.urgency-btn{padding:7px 16px;border-radius:999px;border:2px solid var(--cream-dark);background:var(--cream);cursor:pointer;font-size:0.78rem;font-weight:600;transition:all 0.2s;color:var(--text-mid);}
+.urgency-btn:hover{border-color:var(--saffron);color:var(--saffron);}
+.urgency-btn.selected{background:var(--saffron);border-color:var(--saffron);color:var(--white);}
+.submit-btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--saffron),#C94B00);border:none;border-radius:14px;color:var(--white);font-size:1rem;font-family:'Hind Siliguri',sans-serif;font-weight:700;cursor:pointer;margin-top:10px;transition:all 0.25s;box-shadow:0 4px 20px rgba(255,107,0,0.3);}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,107,0,0.45);}
+.success-box{display:none;text-align:center;padding:40px 24px;}
+.success-box.visible{display:block;}
+.success-icon{font-size:3.5rem;margin-bottom:16px;animation:bounceIn 0.6s cubic-bezier(0.16,1,0.3,1);}
+@keyframes bounceIn{from{transform:scale(0.5);opacity:0;}to{transform:scale(1);opacity:1;}}
+.success-box h3{font-family:'Hind Siliguri',sans-serif;font-size:1.4rem;color:var(--maroon);margin-bottom:10px;}
+.success-box p{color:var(--text-light);line-height:1.7;margin-bottom:20px;}
+.btn-back{background:none;border:2px solid var(--saffron);color:var(--saffron);border-radius:999px;padding:9px 24px;cursor:pointer;font-family:'Hind Siliguri',sans-serif;font-size:0.88rem;font-weight:600;transition:all 0.2s;}
+.btn-back:hover{background:var(--saffron);color:white;}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:32px;}
+.info-card{background:var(--white);border-radius:20px;padding:20px;border:1px solid var(--cream-dark);text-align:center;transition:transform 0.2s;}
+.info-card:hover{transform:translateY(-4px);}
+.info-card-icon{font-size:2rem;margin-bottom:10px;}
+.info-card h4{font-family:'Hind Siliguri',sans-serif;font-size:0.95rem;color:var(--maroon);margin-bottom:5px;}
+.info-card p{font-size:0.78rem;color:var(--text-light);line-height:1.6;}
+
+/* VOICE */
+.voice-section{background:linear-gradient(135deg,#1a0500,#2d0800);padding:50px 20px;}
+.voice-inner{max-width:680px;margin:0 auto;text-align:center;}
+.voice-section-title h2{font-family:'Hind Siliguri',sans-serif;font-size:1.6rem;color:var(--gold);margin-bottom:8px;}
+.voice-section-title p{color:rgba(255,240,176,0.65);font-size:0.85rem;margin-bottom:32px;}
+.diya-animation{font-size:2.8rem;display:block;margin:0 auto 20px;animation:flameDance 2s ease-in-out infinite;}
+@keyframes flameDance{0%,100%{transform:scale(1) rotate(-2deg);}50%{transform:scale(1.1) rotate(2deg);}}
+.voice-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,215,0,0.25);border-radius:28px;padding:32px 24px;position:relative;overflow:hidden;}
+.mic-wrapper{position:relative;display:inline-flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.ripple{position:absolute;border-radius:50%;border:2px solid rgba(255,215,0,0.4);opacity:0;}
+.ripple:nth-child(1){width:110px;height:110px;}
+.ripple:nth-child(2){width:150px;height:150px;}
+.ripple:nth-child(3){width:190px;height:190px;}
+.listening .ripple{animation:rippleOut 1.8s ease-out infinite;}
+.listening .ripple:nth-child(2){animation-delay:0.5s;}
+.listening .ripple:nth-child(3){animation-delay:1s;}
+@keyframes rippleOut{0%{opacity:0.6;transform:scale(0.85);}100%{opacity:0;transform:scale(1.2);}}
+.mic-btn{position:relative;z-index:2;width:80px;height:80px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,#FF6B00,#C94B00);display:flex;align-items:center;justify-content:center;font-size:1.8rem;transition:all 0.25s;box-shadow:0 0 30px rgba(255,107,0,0.4);}
+.mic-btn.listening{background:linear-gradient(135deg,#ff4444,#aa0000);animation:micPulse 1s ease-in-out infinite;}
+@keyframes micPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+.mic-status{font-family:'Hind Siliguri',sans-serif;font-size:0.95rem;color:rgba(255,240,176,0.7);margin-bottom:14px;min-height:22px;}
+.mic-status.active{color:var(--gold);}
+.live-box{background:rgba(255,255,255,0.05);border:1px solid rgba(255,215,0,0.15);border-radius:14px;padding:14px 16px;min-height:48px;font-family:'Hind Siliguri',sans-serif;font-size:0.9rem;color:rgba(255,240,176,0.9);line-height:1.7;text-align:left;display:none;margin-bottom:18px;position:relative;}
+.live-box.visible{display:block;}
+.live-box::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--saffron),var(--gold));border-radius:3px 0 0 3px;}
+.cursor-blink{display:inline-block;width:2px;height:1em;background:var(--gold);vertical-align:text-bottom;animation:blink 1s step-end infinite;margin-left:2px;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.ai-reply-box{display:none;background:linear-gradient(135deg,rgba(255,215,0,0.08),rgba(255,107,0,0.05));border:1px solid rgba(255,215,0,0.3);border-radius:18px;padding:20px 22px;text-align:left;margin-top:4px;}
+.ai-reply-box.visible{display:block;}
+.reply-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.reply-header span{font-family:'Hind Siliguri',sans-serif;font-size:0.82rem;color:var(--gold);font-weight:700;}
+.reply-text{font-family:'Hind Siliguri',sans-serif;font-size:0.92rem;color:rgba(255,240,176,0.92);line-height:1.9;margin-bottom:14px;}
+.reply-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-speak{background:linear-gradient(135deg,var(--saffron),#C94B00);border:none;border-radius:999px;color:white;padding:8px 20px;cursor:pointer;font-size:0.8rem;font-weight:600;transition:all 0.2s;display:flex;align-items:center;gap:6px;}
+.btn-speak.speaking{background:linear-gradient(135deg,#666,#444);}
+.btn-clear{background:transparent;border:1px solid rgba(255,215,0,0.3);border-radius:999px;color:rgba(255,240,176,0.6);padding:8px 16px;cursor:pointer;font-size:0.8rem;transition:all 0.2s;}
+.btn-clear:hover{border-color:var(--gold);color:var(--gold);}
+.loading-dots{display:none;text-align:center;padding:14px;}
+.loading-dots.visible{display:block;}
+.loading-dots span{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);margin:0 3px;animation:dotBounce 1.2s ease-in-out infinite;}
+.loading-dots span:nth-child(2){animation-delay:0.2s;}
+.loading-dots span:nth-child(3){animation-delay:0.4s;}
+@keyframes dotBounce{0%,80%,100%{transform:scale(0.6);opacity:0.4;}40%{transform:scale(1);opacity:1;}}
+
+/* ADMIN */
+.admin-fab{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--maroon),#5D0000);border:none;cursor:pointer;font-size:1.4rem;color:white;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:1000;transition:all 0.2s;}
+.admin-fab:hover{transform:scale(1.1);}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:2000;display:none;align-items:center;justify-content:center;padding:16px;}
+.modal-overlay.visible{display:flex;}
+.modal{background:var(--white);border-radius:24px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;position:relative;}
+.modal-header{background:linear-gradient(135deg,var(--maroon),#5D0000);padding:20px 24px;border-radius:24px 24px 0 0;display:flex;align-items:center;justify-content:space-between;}
+.modal-header h3{font-family:'Hind Siliguri',sans-serif;color:var(--gold);font-size:1.1rem;}
+.modal-close{background:none;border:none;color:rgba(255,255,255,0.7);font-size:1.4rem;cursor:pointer;}
+.modal-body{padding:24px;}
+.admin-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.admin-tab{padding:8px 16px;border-radius:999px;border:2px solid var(--cream-dark);background:var(--cream);cursor:pointer;font-size:0.8rem;font-weight:600;color:var(--text-mid);transition:all 0.2s;font-family:'Hind Siliguri',sans-serif;}
+.admin-tab.active{background:var(--maroon);border-color:var(--maroon);color:white;}
+.admin-panel{display:none;}
+.admin-panel.active{display:block;}
+.admin-input,.admin-select,.admin-textarea{width:100%;padding:11px 14px;border:2px solid var(--cream-dark);border-radius:12px;font-size:0.88rem;font-family:'Hind Siliguri',sans-serif;color:var(--text-dark);background:var(--cream);outline:none;margin-bottom:14px;}
+.admin-input:focus,.admin-select:focus,.admin-textarea:focus{border-color:var(--maroon);}
+.admin-textarea{min-height:100px;resize:vertical;}
+.admin-submit{width:100%;padding:13px;background:linear-gradient(135deg,var(--maroon),#5D0000);border:none;border-radius:12px;color:white;font-family:'Hind Siliguri',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;}
+.login-box{padding:8px 0;}
+.login-box p{font-family:'Hind Siliguri',sans-serif;color:var(--text-mid);font-size:0.88rem;margin-bottom:14px;}
+.post-manage-list{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+.manage-item{background:var(--cream);border-radius:12px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.manage-item-title{font-family:'Hind Siliguri',sans-serif;font-size:0.85rem;color:var(--text-dark);flex:1;}
+.delete-btn{background:none;border:none;color:#e53935;cursor:pointer;font-size:1.1rem;padding:4px;}
+
+footer{background:linear-gradient(135deg,#3D0C02,#6B1A00);color:rgba(255,240,176,0.8);text-align:center;padding:28px 20px;font-size:0.82rem;line-height:1.8;}
+footer .footer-om{font-size:1.4rem;color:var(--gold);display:block;margin-bottom:6px;}
+</style>
+</head>
+<body>
+<div class="top-border"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="om-symbol">ॐ</span>
+  <h1 class="hero-title">গাড়িখানা ওল্ড মনসা মন্দির, পুরুলিয়া</h1>
+  <p class="hero-subtitle">মাঁ মনসার চরণে আপনার কথা জানান। প্রতিটি কষ্টের সমাধান মাঁর কাছে আছে। 🙏</p>
+</section>
+<div class="wave"></div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <span class="ticker-inner" id="tickerText">
+    &nbsp;&nbsp;&nbsp;🪔 "সর্বে ভবন্তু সুখিনঃ, সর্বে সন্তু নিরাময়াঃ" &nbsp;&nbsp;&nbsp;❀&nbsp;&nbsp;&nbsp;
+    মাঁ মনসার কৃপায় সকলের মঙ্গল হোক &nbsp;&nbsp;&nbsp;❀&nbsp;&nbsp;&nbsp;
+    🙏 আপনার সেবায় সর্বদা প্রস্তুত &nbsp;&nbsp;&nbsp;
+  </span>
+</div>
+
+<!-- NOTICE BOARD -->
+<div class="notice-section">
+  <div class="notice-board">
+    <h2>📢 মন্দিরের খবর ও ঘোষণা</h2>
+    <div id="postsList">
+      <div class="no-posts">🪔 এখনো কোনো ঘোষণা নেই। শীঘ্রই আসছে।</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN FORM -->
+<div class="main">
+  <div class="section-title">
+    <h2>মাঁর দরবারে আর্জি জানান</h2>
+    <div class="title-ornament">
+      <div class="ornament-line"></div>
+      <span style="color:var(--saffron)">✦</span>
+      <div class="ornament-line right"></div>
+    </div>
+  </div>
+
+  <div class="categories">
+    <div class="cat-btn active" onclick="selectCat(this,'পারিবারিক সমস্যা')"><span class="cat-icon">🏠</span><div class="cat-label">পরিবার</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'স্বাস্থ্য সমস্যা')"><span class="cat-icon">🌿</span><div class="cat-label">স্বাস্থ্য</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'মানসিক শান্তি')"><span class="cat-icon">🧘</span><div class="cat-label">মনের শান্তি</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'সম্পর্কের সমস্যা')"><span class="cat-icon">💛</span><div class="cat-label">সম্পর্ক</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'আর্থিক সমস্যা')"><span class="cat-icon">🪙</span><div class="cat-label">আর্থিক</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'ধর্মীয় পথনির্দেশ')"><span class="cat-icon">🪔</span><div class="cat-label">ধর্মীয়</div></div>
+    <div class="cat-btn" onclick="selectCat(this,'অন্য সমস্যা')"><span class="cat-icon">🙏</span><div class="cat-label">অন্যান্য</div></div>
+  </div>
+
+  <div class="form-card" id="formCard">
+    <div id="formContent">
+      <h3>আপনার কথা আমাদের জানান 🙏</h3>
+      <p>আপনার সমস্ত তথ্য সম্পূর্ণ গোপনীয় থাকবে।</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">আপনার নাম <span>*</span></label>
+          <input type="text" class="form-input" id="nameInput" placeholder="যেমন: রামেশ্বর দা"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">বয়স</label>
+          <input type="number" class="form-input" id="ageInput" placeholder="৩৫" min="1" max="120"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">যোগাযোগ (ঐচ্ছিক)</label>
+        <input type="text" class="form-input" id="contactInput" placeholder="ফোন নম্বর বা ইমেইল"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">সমস্যার ধরন <span>*</span></label>
+        <select class="form-select" id="categorySelect">
+          <option value="">— বেছে নিন —</option>
+          <option>পারিবারিক সমস্যা</option>
+          <option>স্বাস্থ্য সমস্যা</option>
+          <option>মানসিক শান্তি</option>
+          <option>সম্পর্কের সমস্যা</option>
+          <option>আর্থিক সমস্যা</option>
+          <option>ধর্মীয় পথনির্দেশ</option>
+          <option>অন্য সমস্যা</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">আপনার সমস্যা বিস্তারিত লিখুন <span>*</span></label>
+        <textarea class="form-textarea" id="problemText" placeholder="এখানে আপনার কথা লিখুন..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">সাহায্য কতটা জরুরি?</label>
+        <div class="urgency-options">
+          <button class="urgency-btn selected" onclick="selectUrgency(this)">সাধারণ</button>
+          <button class="urgency-btn" onclick="selectUrgency(this)">দ্রুত দরকার</button>
+          <button class="urgency-btn" onclick="selectUrgency(this)">অত্যন্ত জরুরি</button>
+        </div>
+      </div>
+      <button class="submit-btn" onclick="submitForm()">🙏 &nbsp; সমস্যা পাঠান — সাহায্য চান</button>
+    </div>
+    <div class="success-box" id="successBox">
+      <div class="success-icon">🪔</div>
+      <h3>আপনার কথা পৌঁছে গেছে!</h3>
+      <p>ধন্যবাদ। আমরা শীঘ্রই যোগাযোগ করব।<br>মাঁ মনসার কৃপা আপনার উপর বর্ষিত হোক। 🙏</p>
+      <button class="btn-back" onclick="resetForm()">← অন্য সমস্যা পাঠান</button>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card"><div class="info-card-icon">🔒</div><h4>সম্পূর্ণ গোপনীয়তা</h4><p>আপনার কথা শুধুমাত্র বিশ্বস্ত পথপ্রদর্শকরাই দেখেন।</p></div>
+    <div class="info-card"><div class="info-card-icon">🪔</div><h4>ধর্মীয় পথনির্দেশ</h4><p>বেদ, গীতা ও শাস্ত্রের ভিত্তিতে পরামর্শ।</p></div>
+    <div class="info-card"><div class="info-card-icon">💛</div><h4>সম্পূর্ণ বিনামূল্যে</h4><p>সেবাই আমাদের ধর্ম।</p></div>
+  </div>
+</div>
+
+<!-- VOICE SECTION -->
+<section class="voice-section">
+  <div class="voice-inner">
+    <div class="voice-section-title">
+      <h2>🎙️ মাঁর দরবারে বলুন</h2>
+      <p>কণ্ঠে বলুন — মাঁ মনসার কৃপায় AI পথনির্দেশ পান</p>
+    </div>
+    <span class="diya-animation">🪔</span>
+    <div class="voice-card">
+      <div class="mic-wrapper" id="micWrapper">
+        <div class="ripple"></div><div class="ripple"></div><div class="ripple"></div>
+        <button class="mic-btn" id="micBtn" onclick="toggleVoice()">🎙️</button>
+      </div>
+      <div class="mic-status" id="micStatus">মাইক্রোফোন চাপুন এবং বলুন</div>
+      <div class="live-box" id="liveBox"><span id="liveVoiceText"></span><span class="cursor-blink"></span></div>
+      <div class="loading-dots" id="loadingDots"><span></span><span></span><span></span>
+        <div style="margin-top:10px;font-family:'Hind Siliguri',sans-serif;font-size:0.82rem;color:rgba(255,240,176,0.6);">মাঁর আশীর্বাদ আসছে...</div>
+      </div>
+      <div class="ai-reply-box" id="aiReplyBox">
+        <div class="reply-header"><span class="maa-icon">🙏</span><span>মাঁ মনসার দিব্য বার্তা</span></div>
+        <div class="reply-text" id="replyText"></div>
+        <div class="reply-actions">
+          <button class="btn-speak" id="speakBtn" onclick="speakReply()">🔊 &nbsp;শুনুন</button>
+          <button class="btn-clear" onclick="clearVoice()">✕ &nbsp;নতুন</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-om">ॐ</span>
+  <strong>গাড়িখানা ওল্ড মনসা মন্দির, পুরুলিয়া</strong><br>
+  সর্বে ভবন্তু সুখিনঃ 🙏
+</footer>
+
+<!-- ADMIN FAB -->
+<button class="admin-fab" onclick="openAdmin()" title="Admin">⚙️</button>
+
+<!-- ADMIN MODAL -->
+<div class="modal-overlay" id="adminModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>🛕 Admin Panel</h3>
+      <button class="modal-close" onclick="closeAdmin()">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <!-- LOGIN -->
+      <div id="loginPanel">
+        <div class="login-box">
+          <p>Admin password দিন:</p>
+          <input type="password" class="admin-input" id="adminPass" placeholder="Password..."/>
+          <button class="admin-submit" onclick="doLogin()">🔐 Login</button>
+          <p id="loginErr" style="color:red;font-size:0.82rem;margin-top:8px;font-family:'Hind Siliguri',sans-serif;display:none;">❌ ভুল password!</p>
+        </div>
+      </div>
+
+      <!-- ADMIN CONTENT -->
+      <div id="adminContent" style="display:none;">
+        <div class="admin-tabs">
+          <button class="admin-tab active" onclick="switchTab('khabar',this)">📢 খবর</button>
+          <button class="admin-tab" onclick="switchTab('pujo',this)">🪔 পূজো</button>
+          <button class="admin-tab" onclick="switchTab('mantra',this)">🕉️ মন্ত্র</button>
+          <button class="admin-tab" onclick="switchTab('manage',this)">🗑️ মুছুন</button>
+        </div>
+
+        <!-- KHABAR -->
+        <div class="admin-panel active" id="panel-khabar">
+          <input type="text" class="admin-input" id="k-title" placeholder="শিরোনাম লিখুন..."/>
+          <textarea class="admin-textarea" id="k-body" placeholder="খবর বা ঘোষণা লিখুন..."></textarea>
+          <button class="admin-submit" onclick="addPost('khabar')">📢 পোস্ট করুন</button>
+        </div>
+
+        <!-- PUJO -->
+        <div class="admin-panel" id="panel-pujo">
+          <input type="text" class="admin-input" id="p-title" placeholder="পূজোর নাম..."/>
+          <input type="text" class="admin-input" id="p-date" placeholder="তারিখ (যেমন: ১৫ মার্চ ২০২৫)"/>
+          <textarea class="admin-textarea" id="p-body" placeholder="পূজোর বিস্তারিত..."></textarea>
+          <input type="text" class="admin-input" id="p-img" placeholder="ছবির URL (ঐচ্ছিক)"/>
+          <button class="admin-submit" onclick="addPost('pujo')">🪔 পোস্ট করুন</button>
+        </div>
+
+        <!-- MANTRA -->
+        <div class="admin-panel" id="panel-mantra">
+          <input type="text" class="admin-input" id="m-title" placeholder="মন্ত্র বা শ্লোকের নাম..."/>
+          <textarea class="admin-textarea" id="m-body" placeholder="মন্ত্র বা শ্লোক লিখুন..."></textarea>
+          <button class="admin-submit" onclick="addPost('mantra')">🕉️ পোস্ট করুন</button>
+        </div>
+
+        <!-- MANAGE -->
+        <div class="admin-panel" id="panel-manage">
+          <p style="font-family:'Hind Siliguri',sans-serif;font-size:0.85rem;color:var(--text-light);margin-bottom:12px;">পোস্ট মুছতে ❌ চাপুন:</p>
+          <div class="post-manage-list" id="manageList"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== POSTS STORAGE =====
+var ADMIN_PASS = 'Jaggan@95';
+var posts = [];
+
+function savePosts() {
+  try { window.storage && window.storage.set('mandir-posts', JSON.stringify(posts)); } catch(e){}
+}
+
+async function loadPosts() {
+  try {
+    if (window.storage) {
+      var r = await window.storage.get('mandir-posts');
+      if (r && r.value) posts = JSON.parse(r.value);
+    }
+  } catch(e) { posts = []; }
+  renderPosts();
+}
+
+function renderPosts() {
+  var list = document.getElementById('postsList');
+  if (!posts.length) {
+    list.innerHTML = '<div class="no-posts">🪔 এখনো কোনো ঘোষণা নেই।</div>';
+    return;
+  }
+  list.innerHTML = posts.slice().reverse().map(function(p, i) {
+    var badge = p.type === 'mantra' ? '<span class="post-badge badge-mantra">🕉️ মন্ত্র</span>' :
+                p.type === 'pujo'   ? '<span class="post-badge badge-pujo">🪔 পূজো</span>' :
+                                      '<span class="post-badge badge-khabar">📢 খবর</span>';
+    var img = p.img ? '<img src="'+p.img+'" class="post-img" onerror="this.style.display=\'none\'">' : '';
+    var extra = p.date ? '<br><small style="color:var(--saffron)">📅 '+p.date+'</small>' : '';
+    return '<div class="post-item '+p.type+'">'+badge+'<div class="post-title">'+p.title+'</div>'+extra+'<div class="post-body">'+p.body+'</div>'+img+'<div class="post-date">'+p.dateStr+'</div></div>';
+  }).join('');
+}
+
+function renderManage() {
+  var ml = document.getElementById('manageList');
+  if (!posts.length) { ml.innerHTML = '<p style="color:var(--text-light);font-size:0.85rem;font-family:\'Hind Siliguri\',sans-serif;">কোনো পোস্ট নেই।</p>'; return; }
+  ml.innerHTML = posts.slice().reverse().map(function(p, ri) {
+    var i = posts.length - 1 - ri;
+    return '<div class="manage-item"><span class="manage-item-title">'+p.title+'</span><button class="delete-btn" onclick="deletePost('+i+')">❌</button></div>';
+  }).join('');
+}
+
+function addPost(type) {
+  var title='', body='', date='', img='';
+  if (type==='khabar') {
+    title = document.getElementById('k-title').value.trim();
+    body  = document.getElementById('k-body').value.trim();
+  } else if (type==='pujo') {
+    title = document.getElementById('p-title').value.trim();
+    body  = document.getElementById('p-body').value.trim();
+    date  = document.getElementById('p-date').value.trim();
+    img   = document.getElementById('p-img').value.trim();
+  } else if (type==='mantra') {
+    title = document.getElementById('m-title').value.trim();
+    body  = document.getElementById('m-body').value.trim();
+  }
+  if (!title || !body) { alert('শিরোনাম ও বিষয় লিখুন।'); return; }
+  var now = new Date();
+  posts.push({ type:type, title:title, body:body, date:date, img:img, dateStr: now.toLocaleDateString('bn-IN') });
+  savePosts();
+  renderPosts();
+  // clear
+  ['k-title','k-body','p-title','p-body','p-date','p-img','m-title','m-body'].forEach(function(id){ var el=document.getElementById(id); if(el) el.value=''; });
+  alert('✅ পোস্ট হয়ে গেছে!');
+}
+
+function deletePost(i) {
+  if (!confirm('এই পোস্ট মুছবেন?')) return;
+  posts.splice(i, 1);
+  savePosts();
+  renderPosts();
+  renderManage();
+}
+
+// ===== ADMIN =====
+var adminLoggedIn = false;
+function openAdmin() {
+  document.getElementById('adminModal').classList.add('visible');
+  if (!adminLoggedIn) {
+    document.getElementById('loginPanel').style.display = 'block';
+    document.getElementById('adminContent').style.display = 'none';
+  }
+}
+function closeAdmin() { document.getElementById('adminModal').classList.remove('visible'); }
+function doLogin() {
+  if (document.getElementById('adminPass').value === ADMIN_PASS) {
+    adminLoggedIn = true;
+    document.getElementById('loginPanel').style.display = 'none';
+    document.getElementById('adminContent').style.display = 'block';
+    document.getElementById('loginErr').style.display = 'none';
+  } else {
+    document.getElementById('loginErr').style.display = 'block';
+  }
+}
+function switchTab(name, el) {
+  document.querySelectorAll('.admin-tab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.admin-panel').forEach(function(p){p.classList.remove('active');});
+  el.classList.add('active');
+  document.getElementById('panel-'+name).classList.add('active');
+  if (name==='manage') renderManage();
+}
+
+// ===== FORM =====
+function selectCat(el, cat) {
+  document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});
+  el.classList.add('active');
+  var sel = document.getElementById('categorySelect');
+  for (var o of sel.options) { if (o.value===cat) { sel.value=cat; break; } }
+}
+function selectUrgency(el) {
+  document.querySelectorAll('.urgency-btn').forEach(function(b){b.classList.remove('selected');});
+  el.classList.add('selected');
+}
+function submitForm() {
+  var name = document.getElementById('nameInput').value.trim();
+  var problem = document.getElementById('problemText').value.trim();
+  var cat = document.getElementById('categorySelect').value;
+  if (!name) { alert('অনুগ্রহ করে আপনার নাম লিখুন।'); return; }
+  if (!cat) { alert('সমস্যার ধরন বেছে নিন।'); return; }
+  if (problem.length < 3) { alert('সমস্যাটা একটু বিস্তারিত লিখুন।'); return; }
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('successBox').classList.add('visible');
+}
+function resetForm() {
+  document.getElementById('formContent').style.display = 'block';
+  document.getElementById('successBox').classList.remove('visible');
+  ['nameInput','ageInput','contactInput','problemText'].forEach(function(id){document.getElementById(id).value='';});
+  document.getElementById('categorySelect').value='';
+  document.querySelectorAll('.urgency-btn').forEach(function(b,i){b.classList.toggle('selected',i===0);});
+}
+
+// ===== VOICE =====
+var vListening=false, vTranscript='', vRecog=null, speaking=false;
+function toggleVoice() {
+  var SR = window.SpeechRecognition||window.webkitSpeechRecognition;
+  if (!SR) { alert('Chrome বা Edge browser ব্যবহার করুন।'); return; }
+  vListening ? stopVoice() : startVoice(SR);
+}
+function startVoice(SR) {
+  vTranscript=''; vListening=true;
+  vRecog = new SR(); vRecog.continuous=true; vRecog.interimResults=true; vRecog.lang='bn-IN';
+  vRecog.onresult=function(e){var interim='',final='';for(var i=e.resultIndex;i<e.results.length;i++){if(e.results[i].isFinal)final+=e.results[i][0].transcript;else interim+=e.results[i][0].transcript;}vTranscript+=final;document.getElementById('liveVoiceText').textContent=vTranscript+interim;};
+  vRecog.onerror=function(e){if(e.error==='not-allowed'){alert('মাইক্রোফোন permission দিন।');vListening=false;resetMicUI();}};
+  vRecog.onend=function(){if(vListening)try{vRecog.start();}catch(ex){}};
+  try{vRecog.start();document.getElementById('micBtn').classList.add('listening');document.getElementById('micBtn').textContent='⏹️';document.getElementById('micWrapper').classList.add('listening');document.getElementById('micStatus').textContent='শুনছি... বলুন।';document.getElementById('micStatus').classList.add('active');document.getElementById('liveBox').classList.add('visible');document.getElementById('liveVoiceText').textContent='';document.getElementById('aiReplyBox').classList.remove('visible');}catch(ex){alert('মাইক্রোফোন চালু হয়নি।');vListening=false;}
+}
+function stopVoice(){vListening=false;if(vRecog)try{vRecog.stop();}catch(ex){}resetMicUI();var text=vTranscript.trim();if(text&&text.length>2){document.getElementById('micStatus').textContent='আসছে...';getAIReply(text);}else{document.getElementById('micStatus').textContent='কিছু শোনা যায়নি।';document.getElementById('liveBox').classList.remove('visible');}}
+function resetMicUI(){document.getElementById('micBtn').classList.remove('listening');document.getElementById('micBtn').textContent='🎙️';document.getElementById('micWrapper').classList.remove('listening');}
+async function getAIReply(userText){
+  document.getElementById('loadingDots').classList.add('visible');document.getElementById('liveBox').classList.remove('visible');
+  try{var res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:'আপনি গাড়িখানা ওল্ড মনসা মন্দির, পুরুলিয়ার দিব্য পথপ্রদর্শক। ভক্তের সমস্যা শুনে মাঁ মনসার কৃপা ও হিন্দু শাস্ত্রের ভিত্তিতে সহজ সরল বাংলায় পথ দেখান। মাঁর উল্লেখ করুন, একটি মন্ত্র দিন। শেষে আশীর্বাদ দিন।',messages:[{role:'user',content:'ভক্তের সমস্যা: "'+userText+'"'}]})});var data=await res.json();var reply=(data.content&&data.content[0]&&data.content[0].text)?data.content[0].text:'মাঁ মনসার কৃপা আপনার উপর সদা বর্ষিত হোক। 🙏';showReply(reply);}catch(err){showReply('মাঁ মনসার কৃপা আপনার উপর সদা বর্ষিত হোক। 🙏\n\nমন্ত্র: "ওঁ হ্রীং শ্রীং ক্লীং ঐং মনসায়ৈ নমঃ"');}
+  document.getElementById('loadingDots').classList.remove('visible');
+}
+function showReply(text){document.getElementById('replyText').innerHTML=text.replace(/\n/g,'<br>');document.getElementById('aiReplyBox').classList.add('visible');document.getElementById('micStatus').textContent='মাঁর বার্তা এসে গেছে 🙏';document.getElementById('aiReplyBox').scrollIntoView({behavior:'smooth',block:'center'});}
+function speakReply(){if(!window.speechSynthesis){alert('browser সমর্থন করে না।');return;}if(speaking){speechSynthesis.cancel();speaking=false;document.getElementById('speakBtn').innerHTML='🔊 &nbsp;শুনুন';document.getElementById('speakBtn').classList.remove('speaking');return;}var text=document.getElementById('replyText').innerText;var utt=new SpeechSynthesisUtterance(text);utt.lang='bn-IN';utt.rate=0.85;utt.onstart=function(){speaking=true;document.getElementById('speakBtn').innerHTML='⏹️ &nbsp;থামুন';document.getElementById('speakBtn').classList.add('speaking');};utt.onend=function(){speaking=false;document.getElementById('speakBtn').innerHTML='🔊 &nbsp;শুনুন';document.getElementById('speakBtn').classList.remove('speaking');};speechSynthesis.speak(utt);}
+function clearVoice(){if(window.speechSynthesis)speechSynthesis.cancel();speaking=false;vTranscript='';document.getElementById('aiReplyBox').classList.remove('visible');document.getElementById('liveBox').classList.remove('visible');document.getElementById('liveVoiceText').textContent='';document.getElementById('micStatus').textContent='মাইক্রোফোন চাপুন এবং বলুন';document.getElementById('micStatus').classList.remove('active');}
+
+// INIT
+loadPosts();
+</script>
+</body>
+  </html>
